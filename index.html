@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic document preparation in R</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Dynamic document preparation in R">
+  <meta name="author" content="Elliot Kleiman">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+    <link rel="stylesheet" href = "assets/css/ribbons.css">
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+    <!-- END LOGO SLIDE -->
+    
+
+    <!-- TITLE SLIDE -->
+    <!-- Should I move this to a Local Layout File? -->
+    <slide class="title-slide segue nobackground">
+      <hgroup class="auto-fadein">
+        <h1>Dynamic document preparation in R</h1>
+        <h2>Generate a report from R code</h2>
+        <p>Elliot Kleiman<br/></p>
+      </hgroup>
+          </slide>
+
+    <!-- SLIDES -->
+      <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>A minimal R Markdown example</h2>
+  </hgroup>
+  <article>
+    <p>A quote:</p>
+
+<blockquote>
+<p>Markdown is not LaTeX.</p>
+</blockquote>
+
+<p>To compile me, run this in R:</p>
+
+<pre><code>library(knitr)
+knit(&#39;001-minimal.Rmd&#39;)
+</code></pre>
+
+<p>See <a href="https://github.com/yihui/knitr-examples/blob/master/001-minimal.md">output here</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="codechunks" id="codechunks" style="background:;">
+  <hgroup>
+    <h2>Code chunks</h2>
+  </hgroup>
+  <article>
+    <p>A <em>paragraph</em> here. A code chunk below (remember the three backticks):</p>
+
+<pre><code class="r">1 + 1
+</code></pre>
+
+<pre><code>## [1] 2
+</code></pre>
+
+<pre><code class="r">0.4 - 0.7 + 0.3  # what? it is not zero!
+</code></pre>
+
+<pre><code>## [1] 5.551e-17
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="class" id="graphics" style="background:;">
+  <hgroup>
+    <h2>graphics</h2>
+  </hgroup>
+  <article>
+    <p>It is easy.</p>
+
+<pre><code class="r">plot(1:10)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-21.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+<pre><code class="r">hist(rnorm(1000))
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-22.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="inlinecode" style="background:;">
+  <hgroup>
+    <h2>inline code</h2>
+  </hgroup>
+  <article>
+    <p>Yes I know the value of pi is 3.1416, and 2 times pi is 6.2832.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="class" id="math" style="background:;">
+  <hgroup>
+    <h2>math</h2>
+  </hgroup>
+  <article>
+    <p>Sigh. You cannot live without math equations. OK, here we go: \(\alpha+\beta=\gamma\). Note this is not supported by native markdown. You probably want to try RStudio, or at least the R package <strong>markdown</strong>, or the function <code>knitr::knit2html()</code>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="nestedcodechunks" style="background:;">
+  <hgroup>
+    <h2>nested code chunks</h2>
+  </hgroup>
+  <article>
+    <p>You can write code within other elements, e.g. a list</p>
+
+<ol>
+<li><p>foo is good</p>
+
+<pre><code class="r">strsplit(&quot;hello indented world&quot;, &quot; &quot;)[[1]]
+</code></pre>
+
+<pre><code>## [1] &quot;hello&quot;    &quot;indented&quot; &quot;world&quot;
+</code></pre></li>
+<li><p>bar is better</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+      <slide class="" id="conclusion" style="background:;">
+  <hgroup>
+    <h2>conclusion</h2>
+  </hgroup>
+  <article>
+    <p>Nothing fancy. You are ready to go. When you become picky, go to the <a href="http://yihui.name/knitr/">knitr website</a>.</p>
+
+<p><img src="http://yihui.name/knitr/images/knit-logo.png" alt="knitr logo"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+
+  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+<!-- Grab CDN jQuery, fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery-1.7.min.js"><\/script>')</script>
+<!-- Load Javascripts for Widgets -->
+<!-- LOAD HIGHLIGHTER JS FILES -->
+<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+</html>
